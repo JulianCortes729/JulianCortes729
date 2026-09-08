@@ -27,9 +27,9 @@ Cada repositorio tiene un README con la arquitectura del proyecto y por dónde e
 
 ## Stack
 
-**Motores:** Unity (2D y 3D), Godot
-**Lenguajes:** C#, GDScript
-**Herramientas:** Git, NUnit, Unity Test Runner, A* Pathfinding Project, Ink
+- **Motores:** Unity (2D y 3D), Godot
+- **Lenguajes:** C#, GDScript
+- **Herramientas:** Git, NUnit, Unity Test Runner, A* Pathfinding Project, Ink
 
 ## Contacto
 
