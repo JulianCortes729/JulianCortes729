@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julián Cortés | Game Developer</title>
+    <meta name="description" content="Portfolio de Julián Cortés, programador de videojuegos junior. Proyectos en Unity (C#) y Godot (GDScript).">
+    <meta property="og:title" content="Julián Cortés | Programador de Videojuegos">
+    <meta property="og:description" content="Portfolio de Julián Cortés, programador de videojuegos junior. Proyectos en Unity (C#) y Godot (GDScript).">
+    <meta property="og:type" content="website">
     <style>
         :root {
             --bg-color: #121212;
@@ -25,52 +29,40 @@
         header { margin-bottom: 4rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
         h1 { font-size: 2.5rem; font-weight: 700; color: #fff; }
         .subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .contact { font-size: 0.95rem; margin-top: 0.5rem; }
+        .contact a { color: var(--accent); text-decoration: none; }
+        .contact a:hover { color: var(--hover); text-decoration: underline; }
 
         /* Grid de Proyectos */
         .projects-grid { display: grid; gap: 2rem; }
         
-        /* Tarjeta de Juego */
+        /* Tarjeta de Juego (siempre con video arriba y contenido abajo) */
         .game-card {
             background: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.2s ease;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
+            align-items: stretch;
         }
         
         .game-card:hover { transform: translateY(-3px); }
 
         .game-img {
             width: 100%;
-            height: auto; 
-            aspect-ratio: 16/9; 
-            object-fit: cover; 
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
             object-position: center;
-            background-color: #333; 
+            background-color: #333;
+            border-radius: 8px 8px 0 0;
+            display: block;
         }
 
         .game-content { padding: 1.5rem; }
         
         .game-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff; }
-
-        /* Modificador para tarjetas que usan video en formato grande */
-        .game-card.video-card {
-            flex-direction: column; 
-            align-items: stretch;
-            max-width: 1000px; 
-        }
-
-        .game-card.video-card .game-img {
-            width: 100%; 
-            height: auto; /* Esto mantiene la proporción original del video */
-            border-radius: 8px 8px 0 0;
-            display: block; /* Elimina un pequeño margen invisible que a veces dejan los videos */
-        }
-
-        .game-card.video-card .game-content {
-            padding: 20px; 
-        }
         
         .tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
         .tag { 
@@ -107,18 +99,12 @@
         .social-link { color: var(--text-main); text-decoration: none; margin: 0 10px; }
         .social-link:hover { color: var(--accent); }
 
-        /* Desktop Layout */
-        @media (min-width: 600px) {
-            .game-card { 
-                flex-direction: row; 
-                align-items: stretch; 
-            }
-            .game-img { 
-                width: 350px; 
-                height: auto; 
-                aspect-ratio: auto; 
-                object-fit: contain; 
-            }
+        /* Accesibilidad */
+        a:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .game-card:hover { transform: none; }
+            * { transition: none !important; }
         }
     </style>
 </head>
@@ -127,15 +113,44 @@
     <div class="container">
         <header>
             <h1>Julián Cortés</h1>
-            <p class="subtitle">Programador de Videojuegos Junior | Unity 3D-2D | C#</p>
+            <p class="subtitle">Programador de Videojuegos Junior | Unity (C#) | Godot (GDScript)</p>
+            <p class="contact"><a href="mailto:juliancortes729@gmail.com">juliancortes729@gmail.com</a></p>
         </header>
 
         <section class="projects-grid">
-            
 
-            <article class="game-card video-card">
-                <video class="game-img" autoplay loop muted playsinline>
-                    <source src="Video_kioskito.mp4" type="video/mp4">
+            <article class="game-card">
+                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Zap The Dust">
+                    <source data-src="Video_ZapTheDust.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+
+                <div class="game-content">
+                    <h2 class="game-title">Zap The Dust 🧹</h2>
+                    <div class="tags">
+                        <span class="tag">BAGD Level Up Jam 2026</span>
+                        <span class="tag">Programador</span>
+                        <span class="tag">Godot Engine</span>
+                        <span class="tag">GDScript</span>
+                        <span class="tag">2D</span>
+                        <span class="tag">Navegador / Windows</span>
+                    </div>
+                    <p class="game-desc">
+                        Heredás la torre de tu tatarabuelo y está inmunda, pero en vez de agarrar la escoba usás magia: un hechizo despierta a las escobas y con click derecho les marcás dónde ponerse a barrer. Cada pasada devuelve magia, que al terminar el reloj se gasta en una tienda de mejoras. Sin vida ni daño: la única presión es el tiempo.
+                        <br><br>
+                        <strong>Mi rol como programador:</strong><br>
+                        Programé todo el código del juego en GDScript, salvo la integración de sonidos y animaciones: el sistema de hechizos y apuntado, el comportamiento de las escobas y sus órdenes, la detección del polvo, el reloj y la economía de magia con su tienda de mejoras.
+                    </p>
+                    <div class="links">
+                        <a href="https://juliancortes729.itch.io/zap-the-dust" class="btn btn-primary" target="_blank" rel="noopener">► Jugar en el navegador</a>
+                        <a href="https://github.com/Reroll-inc/bagd-2026" class="btn btn-outline" target="_blank" rel="noopener">Ver Código</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card">
+                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Kioskito de mi Barrio">
+                    <source data-src="Video_kioskito.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
                 
@@ -152,14 +167,15 @@
                         Juego de simulación con fuerte identidad barrial de Buenos Aires, ambientado en 2006. Como programador del proyecto, desarrollé e integré las mecánicas principales: el sistema de desempaque y orden de inventario, la simulación de atención al público y las lógicas detrás del sistema de diálogos y eventos narrativos.
                     </p>
                     <div class="links">
-                        <a href="https://juliancortes729.itch.io/kioskito-de-mi-barrio" class="btn btn-primary" target="_blank">► Ver en itch.io</a>
+                        <a href="https://juliancortes729.itch.io/kioskito-de-mi-barrio" class="btn btn-primary" target="_blank" rel="noopener">► Ver en itch.io</a>
+                        <a href="https://github.com/JulianCortes729/Don-Cosme" class="btn btn-outline" target="_blank" rel="noopener">Ver Código</a>
                     </div>
                 </div>
             </article>
 
-            <article class="game-card video-card" >
-                <video class="game-img" autoplay loop muted playsinline>
-                    <source src="Video_77.000.mp4" type="video/mp4">
+            <article class="game-card">
+                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de 77.000">
+                    <source data-src="Video_77.000.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
                 <div class="game-content">
@@ -175,14 +191,15 @@
                         Un proyecto desarrollado para crear conciencia sobre los incendios forestales en la Patagonia Argentina. Te enfrentarás a un mapa a escala real de 77.000 hectáreas donde el fuego se propaga de forma orgánica y procedural.
                     </p>
                     <div class="links">
-                        <a href="https://juliancortes729.itch.io/77000" class="btn btn-primary" target="_blank">► Ver en itch.io</a>
+                        <a href="https://juliancortes729.itch.io/77000" class="btn btn-primary" target="_blank" rel="noopener">► Ver en itch.io</a>
+                        <a href="https://github.com/JulianCortes729/77.000" class="btn btn-outline" target="_blank" rel="noopener">Ver Código</a>
                     </div>
                 </div>
             </article>
 
-            <article class="game-card video-card">
-                <video class="game-img" autoplay loop muted playsinline>
-                    <source src="Video_C-M-ON.mp4" type="video/mp4">
+            <article class="game-card">
+                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de C-M-ON">
+                    <source data-src="Video_C-M-ON.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
                 <div class="game-content">
@@ -197,15 +214,15 @@
                         Un plataformero 3D de acción y precisión. Escala edificios futuristas, esquiva trampas mortales y enfréntate a jefes mecánicos en esta demo técnica enfocada en mecánicas de movimiento y combate.
                     </p>
                     <div class="links">
-                        <a href="https://play.unity.com/en/games/c9c5e95f-bb60-4f34-816d-dd38df96bf3d/c-m-on" class="btn btn-primary" target="_blank">► Jugar Online</a>
-                        <a href="https://github.com/JulianCortes729/C-M-ON" class="btn btn-outline" target="_blank">Ver Código</a>
+                        <a href="https://play.unity.com/en/games/c9c5e95f-bb60-4f34-816d-dd38df96bf3d/c-m-on" class="btn btn-primary" target="_blank" rel="noopener">► Jugar Online</a>
+                        <a href="https://github.com/JulianCortes729/C-M-ON" class="btn btn-outline" target="_blank" rel="noopener">Ver Código</a>
                     </div>
                 </div>
             </article>
 
-            <article class="game-card video-card">
-                <video class="game-img" autoplay loop muted playsinline>
-                    <source src="Video_Cien_Mascaras.mp4" type="video/mp4">
+            <article class="game-card">
+                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Cien Máscaras">
+                    <source data-src="Video_Cien_Mascaras.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
                 <div class="game-content">
@@ -222,11 +239,8 @@
                         Implementé la <strong>IA de los enemigos</strong>, el sistema de <strong>Cámara Dinámica</strong> para seguir la acción, la Interfaz de Usuario (UI) y la lógica de <strong>Respawn de máscaras</strong> en la arena.
                     </p>
                     <div class="links">
-                        <a href="https://juliancortes729.itch.io/cien-mascaras" class="btn btn-primary" target="_blank">► Ver en itch.io</a>
-                        
-                        <span style="display: flex; align-items: center; font-size: 0.85rem; color: #777; margin-left: 10px; border: 1px solid #444; padding: 0 10px; border-radius: 4px; height: 36px;">
-                            🔒 Código Privado
-                        </span>
+                        <a href="https://juliancortes729.itch.io/cien-mascaras" class="btn btn-primary" target="_blank" rel="noopener">► Ver en itch.io</a>
+                        <a href="https://github.com/JulianCortes729/GGJ2026" class="btn btn-outline" target="_blank" rel="noopener">Ver Código</a>
                     </div>
                 </div>
             </article>
@@ -234,13 +248,56 @@
         </section>
 
         <footer>
-            <p>© 2025 Julián Cortés.</p>
+            <p>© 2026 Julián Cortés.</p>
             <br>
-            <a href="https://www.linkedin.com/in/julian-cortes-36189021b/" class="social-link">LinkedIn</a>
-            <a href="https://github.com/JulianCortes729" class="social-link">GitHub</a>
-            <a href="https://www.instagram.com/jgamedev729/" class="social-link">Instagram</a>
+            <a href="mailto:juliancortes729@gmail.com" class="social-link">Email</a>
+            <a href="https://www.linkedin.com/in/julian-cortes-36189021b/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/JulianCortes729" class="social-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.instagram.com/jgamedev729/" class="social-link" target="_blank" rel="noopener">Instagram</a>
         </footer>
     </div>
+
+    <script>
+        // Carga diferida de videos: solo se descargan cuando la tarjeta entra en pantalla.
+        (function () {
+            const videos = document.querySelectorAll('video.game-img');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function cargar(video) {
+                if (video.dataset.cargado) return;
+                const source = video.querySelector('source[data-src]');
+                if (!source) return;
+                source.src = source.dataset.src;
+                video.load();
+                video.dataset.cargado = '1';
+            }
+
+            function reproducir(video) {
+                cargar(video);
+                const p = video.play();
+                if (p) p.catch(function () { video.controls = true; });
+            }
+
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                // Sin animación automática: se cargan con controles para que el usuario decida.
+                videos.forEach(function (v) { v.controls = true; cargar(v); });
+                return;
+            }
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        reproducir(video);
+                    } else if (!video.paused) {
+                        video.pause();
+                    }
+                });
+            }, { rootMargin: '200px 0px', threshold: 0.1 });
+
+            videos.forEach(function (v) { observer.observe(v); });
+        })();
+    </script>
 
 </body>
 </html>
