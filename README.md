@@ -17,8 +17,6 @@ Buenos Aires, Argentina · [Portfolio](https://juliancortes729.github.io/JulianC
 | **[77.000](https://github.com/JulianCortes729/77.000)** | Unity / C# | Programador (individual) | Arde La Patagonia Game Jam |
 | **[C-M-ON](https://github.com/JulianCortes729/C-M-ON)** | Unity / C# | Programador (individual) | Proyecto final, curso Unity 3D — Talento Tech |
 
-Cada repositorio tiene un README con la arquitectura del proyecto y por dónde empezar a leer el código.
-
 ## En qué estoy trabajando
 
 - Arquitectura desacoplada en proyectos de jam: sistemas que se comunican por señales y eventos en vez de referencias directas.
