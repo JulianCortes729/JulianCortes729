@@ -3,7 +3,7 @@
 **Programador de videojuegos** · Unity (C#) y Godot (GDScript) · 
 Técnico Universitario en Informática — Universidad Nacional de General Sarmiento (titulo en trámite)
 
-Buenos Aires, Argentina · [Portfolio](https://github.com/JulianCortes729/JulianCortes729) · [itch.io](https://juliancortes729.itch.io) · [LinkedIn](https://www.linkedin.com/in/julian-cortes-36189021b/)
+Buenos Aires, Argentina · [Portfolio](https://juliancortes729.github.io/JulianCortes729/) · [itch.io](https://juliancortes729.itch.io) · [LinkedIn](https://www.linkedin.com/in/julian-cortes-36189021b/)
 
 ---
 
