@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julián Cortés | Game Developer</title>
-    <meta name="description" content="Portfolio de Julián Cortés, programador de videojuegos junior. Proyectos en Unity (C#) y Godot (GDScript).">
+    <meta name="description" content="Portfolio de Julián Cortés, programador de videojuegos Junior. Proyectos en Unity (C#) y Godot (GDScript).">
     <meta property="og:title" content="Julián Cortés | Programador de Videojuegos">
-    <meta property="og:description" content="Portfolio de Julián Cortés, programador de videojuegos junior. Proyectos en Unity (C#) y Godot (GDScript).">
+    <meta property="og:description" content="Portfolio de Julián Cortés, programador de videojuegos. Proyectos en Unity (C#) y Godot (GDScript).">
     <meta property="og:type" content="website">
     <style>
         :root {
@@ -99,6 +99,30 @@
         .social-link { color: var(--text-main); text-decoration: none; margin: 0 10px; }
         .social-link:hover { color: var(--accent); }
 
+        /* Control de reproducción del video */
+        .video-wrap { position: relative; line-height: 0; }
+
+        .video-toggle {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 0.85rem;
+            line-height: 1;
+            padding: 7px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.45;
+            transition: opacity 0.2s;
+        }
+
+        .video-sonido { right: 56px; }
+
+        .game-card:hover .video-toggle,
+        .video-toggle:focus-visible { opacity: 1; }
+
         /* Accesibilidad */
         a:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -120,10 +144,14 @@
         <section class="projects-grid">
 
             <article class="game-card">
-                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Zap The Dust">
-                    <source data-src="Video_ZapTheDust.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <div class="video-wrap">
+                    <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Zap The Dust">
+                        <source src="Video_ZapTheDust.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <button class="video-toggle" type="button" data-accion="reproducir" aria-label="Pausar video de Zap The Dust">⏸</button>
+                    <button class="video-toggle video-sonido" type="button" data-accion="sonido" aria-label="Activar sonido de Zap The Dust">🔇</button>
+                </div>
 
                 <div class="game-content">
                     <h2 class="game-title">Zap The Dust 🧹</h2>
@@ -149,10 +177,14 @@
             </article>
 
             <article class="game-card">
-                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Kioskito de mi Barrio">
-                    <source data-src="Video_kioskito.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <div class="video-wrap">
+                    <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Kioskito de mi Barrio">
+                        <source src="Video_kioskito.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <button class="video-toggle" type="button" data-accion="reproducir" aria-label="Pausar video de Kioskito de mi Barrio">⏸</button>
+                    <button class="video-toggle video-sonido" type="button" data-accion="sonido" aria-label="Activar sonido de Kioskito de mi Barrio">🔇</button>
+                </div>
                 
                 <div class="game-content">
                     <h2 class="game-title">Kioskito de mi Barrio 🍬</h2>
@@ -174,10 +206,14 @@
             </article>
 
             <article class="game-card">
-                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de 77.000">
-                    <source data-src="Video_77.000.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <div class="video-wrap">
+                    <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de 77.000">
+                        <source src="Video_77.000.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <button class="video-toggle" type="button" data-accion="reproducir" aria-label="Pausar video de 77.000">⏸</button>
+                    <button class="video-toggle video-sonido" type="button" data-accion="sonido" aria-label="Activar sonido de 77.000">🔇</button>
+                </div>
                 <div class="game-content">
                     <h2 class="game-title">77.000 🔥</h2>
                     <div class="tags">
@@ -198,10 +234,14 @@
             </article>
 
             <article class="game-card">
-                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de C-M-ON">
-                    <source data-src="Video_C-M-ON.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <div class="video-wrap">
+                    <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de C-M-ON">
+                        <source src="Video_C-M-ON.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <button class="video-toggle" type="button" data-accion="reproducir" aria-label="Pausar video de C-M-ON">⏸</button>
+                    <button class="video-toggle video-sonido" type="button" data-accion="sonido" aria-label="Activar sonido de C-M-ON">🔇</button>
+                </div>
                 <div class="game-content">
                     <h2 class="game-title">C-M-ON 🕷️</h2>
                     <div class="tags">
@@ -221,10 +261,14 @@
             </article>
 
             <article class="game-card">
-                <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Cien Máscaras">
-                    <source data-src="Video_Cien_Mascaras.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
+                <div class="video-wrap">
+                    <video class="game-img" loop muted playsinline preload="none" aria-label="Gameplay de Cien Máscaras">
+                        <source src="Video_Cien_Mascaras.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <button class="video-toggle" type="button" data-accion="reproducir" aria-label="Pausar video de Cien Máscaras">⏸</button>
+                    <button class="video-toggle video-sonido" type="button" data-accion="sonido" aria-label="Activar sonido de Cien Máscaras">🔇</button>
+                </div>
                 <div class="game-content">
                     <h2 class="game-title">Cien Máscaras 🎭</h2>
                     <div class="tags">
@@ -258,44 +302,103 @@
     </div>
 
     <script>
-        // Carga diferida de videos: solo se descargan cuando la tarjeta entra en pantalla.
         (function () {
-            const videos = document.querySelectorAll('video.game-img');
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var wraps = Array.prototype.slice.call(document.querySelectorAll('.video-wrap'));
+            var videos = [];
 
-            function cargar(video) {
-                if (video.dataset.cargado) return;
-                const source = video.querySelector('source[data-src]');
-                if (!source) return;
-                source.src = source.dataset.src;
-                video.load();
-                video.dataset.cargado = '1';
+            function nombre(video) {
+                return video.getAttribute('aria-label') || 'video';
             }
 
-            function reproducir(video) {
-                cargar(video);
-                const p = video.play();
-                if (p) p.catch(function () { video.controls = true; });
+            function actualizarBotones(wrap) {
+                var video = wrap.querySelector('video');
+                var bPausa = wrap.querySelector('[data-accion="reproducir"]');
+                var bSonido = wrap.querySelector('[data-accion="sonido"]');
+
+                if (bPausa) {
+                    bPausa.textContent = video.paused ? '▶' : '⏸';
+                    bPausa.setAttribute('aria-label',
+                        (video.paused ? 'Reproducir ' : 'Pausar ') + nombre(video));
+                }
+                if (bSonido) {
+                    bSonido.textContent = video.muted ? '🔇' : '🔊';
+                    bSonido.setAttribute('aria-label',
+                        (video.muted ? 'Activar sonido de ' : 'Silenciar ') + nombre(video));
+                }
             }
 
+            wraps.forEach(function (wrap) {
+                var video = wrap.querySelector('video');
+                if (!video) return;
+                videos.push(video);
+
+                function alternarPausa() {
+                    if (video.paused) {
+                        delete video.dataset.pausadoPorUsuario;
+                        video.play().catch(function () {});
+                    } else {
+                        video.dataset.pausadoPorUsuario = '1';
+                        video.pause();
+                    }
+                }
+
+                function alternarSonido() {
+                    var activar = video.muted;
+                    // Un solo video con sonido a la vez.
+                    if (activar) {
+                        videos.forEach(function (otro) {
+                            if (otro !== video) {
+                                otro.muted = true;
+                                actualizarBotones(otro.parentNode);
+                            }
+                        });
+                    }
+                    video.muted = !activar;
+                    if (activar && video.paused) video.play().catch(function () {});
+                    actualizarBotones(wrap);
+                }
+
+                wrap.addEventListener('click', function (e) {
+                    var boton = e.target.closest ? e.target.closest('[data-accion]') : null;
+                    if (boton && boton.dataset.accion === 'sonido') { alternarSonido(); return; }
+                    alternarPausa();
+                });
+
+                video.style.cursor = 'pointer';
+                video.addEventListener('play', function () { actualizarBotones(wrap); });
+                video.addEventListener('pause', function () { actualizarBotones(wrap); });
+                actualizarBotones(wrap);
+            });
+
+            // Sin animación automática: queda todo pausado y decide el usuario.
             if (reduceMotion || !('IntersectionObserver' in window)) {
-                // Sin animación automática: se cargan con controles para que el usuario decida.
-                videos.forEach(function (v) { v.controls = true; cargar(v); });
+                videos.forEach(function (v) {
+                    v.dataset.pausadoPorUsuario = '1';
+                    actualizarBotones(v.parentNode);
+                });
                 return;
             }
 
-            const observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    const video = entry.target;
-                    if (entry.isIntersecting) {
-                        reproducir(video);
-                    } else if (!video.paused) {
+            // Reproduce solo el video que está de verdad en pantalla.
+            var observador = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (e) {
+                    var video = e.target;
+                    var visible = e.intersectionRatio >= 0.35;
+
+                    if (visible && video.paused && !video.dataset.pausadoPorUsuario) {
+                        video.play().catch(function () {});
+                    } else if (!visible && !video.paused) {
                         video.pause();
+                        if (!video.muted) {
+                            video.muted = true;
+                            actualizarBotones(video.parentNode);
+                        }
                     }
                 });
-            }, { rootMargin: '200px 0px', threshold: 0.1 });
+            }, { threshold: [0, 0.35, 0.7, 1] });
 
-            videos.forEach(function (v) { observer.observe(v); });
+            videos.forEach(function (v) { observador.observe(v); });
         })();
     </script>
 
